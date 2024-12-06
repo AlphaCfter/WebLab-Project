@@ -1,3 +1,4 @@
+/* Basic Styling */
 body {
     font-family: 'Roboto', sans-serif;
     line-height: 1.6;
@@ -34,10 +35,9 @@ nav ul li a {
 
 nav ul li a:hover {
     color: #1abc9c;
-    transition: transform 0.3s ease, color 0.3s ease;
     transform: scale(1.1);
+    transition: transform 0.3s ease, color 0.3s ease;
 }
-
 
 header {
     text-align: center;
@@ -58,6 +58,8 @@ header p {
 }
 
 main {
+    display: flex;  /* Use flexbox for layout */
+    flex-direction: row;  /* Default horizontal layout */
     padding: 20px;
     background: #fff;
     margin: 1em auto;
@@ -67,32 +69,122 @@ main {
     border-radius: 8px;
 }
 
-
 footer p {
     margin: 0;
 }
 
-.logo{
+/* Logo Styling */
+.logo {
     width: 200px;
     height: 200px;
     padding-top: 0px;
 }
-.About{
+
+/* About Section */
+.About {
     font-family: 'Courier New', Courier, monospace;
     font-weight: bold;
-    left: 50%;
     text-align: center;
     font-size: 20px;
     padding-bottom: 0px;
 }
-.details{
+
+/* Details Styling */
+.details {
     font-family: 'Courier New', Courier, monospace;
     position: absolute;
     left: 40%;
     top: 37%;
-
 }
-.linkedin{
+
+/* LinkedIn Icon */
+.linkedin {
     height: 30px;
     width: 30px;
+}
+
+/* Responsive Design - For Small Screens (Mobile) */
+
+/* Navigation for smaller screens */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul li {
+        margin: 1em 0;
+    }
+
+    header h1 {
+        font-size: 1.5em;
+    }
+
+    header p {
+        font-size: 1em;
+    }
+
+    main {
+        flex-direction: column;  /* Stack elements vertically */
+        align-items: center;
+        width: 95%;
+        padding: 10px;
+    }
+
+    .logo {
+        width: 150px;
+        height: 150px;
+    }
+
+    .details {
+        font-size: 14px;
+        position: relative;
+        left: 0;
+        top: 0;
+        text-align: center;
+        order: 2;  /* Ensure the details section comes after the logo */
+    }
+
+    /* Ensure the logo appears above the details */
+    .logo {
+        order: 1;  /* Set the logo to appear first */
+    }
+
+    /* About section text size */
+    .About {
+        font-size: 18px;
+    }
+}
+
+/* Extra Small Screens (Mobile Portrait) */
+@media (max-width: 480px) {
+    header {
+        padding: 5px;
+    }
+
+    header h1 {
+        font-size: 1.2em;
+    }
+
+    nav ul li a {
+        font-size: 14px;
+    }
+
+    .logo {
+        width: 120px;
+        height: 120px;
+    }
+
+    main {
+        width: 100%;
+        padding: 5px;
+    }
+
+    .About {
+        font-size: 16px;
+    }
+
+    .details {
+        font-size: 12px;
+    }
 }
